@@ -2,22 +2,19 @@
 # and then load them using Fixtures.load("data.yml")
 
 Boat(b1):
-    name: ""
-    
-Boat(b2):
     name: Sail Boat
     
-Boat(b3):
+Boat(b2):
     name: Power Boat
 
 Slip(s1):
     name: A1
-    boat: b1
+    boat: 
 
 Slip(s2):
     name: A2
-    boat: b2
+    boat: b1
     
 Slip(s3):
     name: A3
-    boat: b3
+    boat: b2

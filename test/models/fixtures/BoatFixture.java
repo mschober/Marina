@@ -14,7 +14,7 @@ public class BoatFixture extends MarinaFixture {
 
 	@Test
 	public void counts() {
-		MarinaTestHelper.assertThree(Boat.count());
+		MarinaTestHelper.assertTwo(Boat.count());
 	}
 	
 	@Test
@@ -22,7 +22,7 @@ public class BoatFixture extends MarinaFixture {
 		Boat boat = MarinaHelper.lookForBoat("Sail Boat");
 		assertEquals("Sail Boat", boat.name);
 		
-		MarinaTestHelper.shouldFindBoats(new String[] {"", "Sail Boat", "Power Boat"});
+		MarinaTestHelper.shouldFindBoats(new String[] {"Sail Boat", "Power Boat"});
 		MarinaTestHelper.shouldNotFindBoat("woogy");
 	}
 

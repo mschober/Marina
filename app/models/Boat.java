@@ -12,5 +12,10 @@ public class Boat extends Model {
 	public Boat(String name){
 		this.name = name;
 	}
+	
+	@Override
+	public String toString(){
+		return name;
+	}
 
 }

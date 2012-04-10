@@ -1,5 +1,7 @@
 package utils;
 
+import static org.junit.Assert.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +11,7 @@ import models.Slip;
 public class MarinaTestHelper {
 
 	public static void shouldNotFindSlip(String value) {
-		org.junit.Assert.assertNull(MarinaHelper.lookForSlip(value));
+		assertNull(MarinaHelper.lookForSlip(value));
 	}
 
 	public static void shouldFindSlips(String[] names) {
@@ -24,12 +26,12 @@ public class MarinaTestHelper {
 
 
 	private static void shouldFindSlip(String name, Slip slip) {
-		org.junit.Assert.assertNotNull("couldnt find slip for: " + name, slip);
-		org.junit.Assert.assertEquals(name, slip.name);
+		assertNotNull("couldnt find slip for: " + name, slip);
+		assertEquals(name, slip.name);
 	}
 
 	public static void assertThree(long count) {
-		org.junit.Assert.assertEquals(3, count);
+		assertEquals(3, count);
 	}
 
 	public static void shouldFindBoats(String[] names) {
@@ -43,11 +45,15 @@ public class MarinaTestHelper {
 	}
 
 	private static void shouldFindBoat(String name, Boat boat) {
-		org.junit.Assert.assertNotNull("couldnt find boat for: " + name, boat);
-		org.junit.Assert.assertEquals(name, boat.name);
+		assertNotNull("couldnt find boat for: " + name, boat);
+		assertEquals(name, boat.name);
 	}
 
 	public static void shouldNotFindBoat(String value) {
-		org.junit.Assert.assertNull(MarinaHelper.lookForBoat(value));
+		assertNull(MarinaHelper.lookForBoat(value));
+	}
+
+	public static void assertTwo(long count) {
+		assertEquals(2, count);
 	}
 }
