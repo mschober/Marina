@@ -6,5 +6,7 @@
 #{selenium}
     // Open the home page, and check that no error occured
     open('/')
-    assertNotTitle('Application error')
+    assertTitle('Marina')
+    assertTextPresent('Slips:')
+    assertTextPresent('A1')
 #{/selenium}

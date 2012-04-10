@@ -1,14 +1,23 @@
 # you describe your data using the YAML notation here
 # and then load them using Fixtures.load("data.yml")
 
+Boat(b1):
+    name: ""
+    
+Boat(b2):
+    name: Sail Boat
+    
+Boat(b3):
+    name: Power Boat
+
 Slip(s1):
     name: A1
-    boat: 
+    boat: b1
 
 Slip(s2):
     name: A2
-    boat: Sail Boat
+    boat: b2
     
 Slip(s3):
     name: A3
-    boat: Power Boat
+    boat: b3
