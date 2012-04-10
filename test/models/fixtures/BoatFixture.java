@@ -6,16 +6,20 @@ import models.Boat;
 
 import org.junit.Test;
 
+import sun.nio.cs.ext.MacHebrew;
+import utils.MarinaHelper;
+import utils.MarinaTestHelper;
+
 public class BoatFixture extends MarinaFixture {
 
 	@Test
 	public void counts() {
-		assertEquals(3, Boat.count());
+		MarinaTestHelper.assertThree(Boat.count());
 	}
 	
 	@Test
 	public void findByName(){
-		Boat boat = Boat.find("byName", "Sail Boat").first();
+		Boat boat = MarinaHelper.lookForBoat("Sail Boat");
 		assertEquals("Sail Boat", boat.name);
 	}
 

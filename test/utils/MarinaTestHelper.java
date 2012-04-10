@@ -5,7 +5,7 @@ import models.Slip;
 public class MarinaTestHelper {
 
 	public static void shouldNotFindSlip(String value) {
-		org.junit.Assert.assertNull(MarinaHelper.lookFor(value));
+		org.junit.Assert.assertNull(MarinaHelper.lookForSlip(value));
 	}
 
 	public static void shouldFindSlips(String[] names) {
@@ -14,7 +14,7 @@ public class MarinaTestHelper {
 	}
 	
 	private static void findSlip(String name) {
-		Slip slip = MarinaHelper.lookFor(name);
+		Slip slip = MarinaHelper.lookForSlip(name);
 		shouldFindSlip(name, slip);
 	}
 
