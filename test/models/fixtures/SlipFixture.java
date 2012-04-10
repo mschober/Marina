@@ -26,4 +26,9 @@ public class SlipFixture extends MarinaFixture {
 		MarinaTestHelper.shouldFindSlips(new String[] {"A1", "A2", "A3"});
 		MarinaTestHelper.shouldNotFindSlip("A4");
 	}
+	
+	@Test
+	public void findByBoat(){
+		
+	}
 }

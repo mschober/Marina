@@ -21,6 +21,9 @@ public class BoatFixture extends MarinaFixture {
 	public void findByName(){
 		Boat boat = MarinaHelper.lookForBoat("Sail Boat");
 		assertEquals("Sail Boat", boat.name);
+		
+		MarinaTestHelper.shouldFindBoats(new String[] {"", "Sail Boat", "Power Boat"});
+		MarinaTestHelper.shouldNotFindBoat("woogy");
 	}
 
 }
