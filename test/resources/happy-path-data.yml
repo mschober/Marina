@@ -1,0 +1,14 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+Slip(s1):
+    name: A1
+    boat: 
+
+Slip(s2):
+    name: A2
+    boat: Sail Boat
+    
+Slip(s3):
+    name: A3
+    boat: Power Boat

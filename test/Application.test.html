@@ -1,5 +1,8 @@
 *{ You can use plain selenium command using the selenium tag }*
 
+#{fixture delete:'all', load:models.fixtures.MarinaFixture.PATH_TO_LOAD_DATA_YML /}
+
+
 #{selenium}
     // Open the home page, and check that no error occured
     open('/')
