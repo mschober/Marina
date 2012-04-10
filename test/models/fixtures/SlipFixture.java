@@ -19,16 +19,12 @@ public class SlipFixture extends MarinaFixture {
 	@Test
 	public void counts() {
 		MarinaTestHelper.assertThree(Slip.count());
+		MarinaTestHelper.assertThree(Boat.count());
 	}
 	
 	@Test
 	public void findByName(){
 		MarinaTestHelper.shouldFindSlips(new String[] {"A1", "A2", "A3"});
 		MarinaTestHelper.shouldNotFindSlip("A4");
-	}
-	
-	@Test
-	public void findByBoat(){
-		
 	}
 }
