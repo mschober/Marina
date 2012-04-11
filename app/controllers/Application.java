@@ -16,9 +16,18 @@ public class Application extends Controller {
         render(slips);
     }
 
-    public static void fillSlip(Long id) {
+    public static void showBoats(Long id) {
     	Slip slip = Slip.findById(id);
     	List<Boat> boats = Boat.findAll();
     	render(slip, boats);
+    }
+    
+    public static void fillSlip(Long slipId, Long boatId) {
+    	Slip slip = Slip.findById(slipId);
+    	Boat boat = Boat.findById(boatId);
+    	slip.boat = boat;
+    	slip.save();
+//    	slip.fill(boat);
+    	index();
     }
 }
