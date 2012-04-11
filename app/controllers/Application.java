@@ -16,6 +16,8 @@ public class Application extends Controller {
         render(slips);
     }
 
-    public static void fillMoorage(int id) {
+    public static void fillSlip(Long id) {
+    	Slip slip = Slip.findById(id);
+    	render(slip);
     }
 }
