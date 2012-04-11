@@ -18,6 +18,7 @@ public class Application extends Controller {
 
     public static void fillSlip(Long id) {
     	Slip slip = Slip.findById(id);
-    	render(slip);
+    	List<Boat> boats = Boat.findAll();
+    	render(slip, boats);
     }
 }
