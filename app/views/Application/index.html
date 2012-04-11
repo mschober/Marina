@@ -4,7 +4,7 @@
 Slips:
 #{list items:slips, as:'slip'}
     #{if slip.boat == null}
-        <li>${slip}<a href="@{Application.fillSlip(slip.id)}">&lt;Empty&gt;</a></li>
+        <li>${slip}<a id="empty" href="@{Application.fillSlip(slip.id)}">&lt;Empty&gt;</a></li>
     #{/if}
     #{else}
         <li>${slip}</li>
