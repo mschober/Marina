@@ -3,6 +3,12 @@
 
 Slips:
 #{list items:slips, as:'slip'}
-    <li>${slip}</li>
+    #{if slip.boat == null}
+        <li>${slip}<a href="@{Application.newMoorage(slip.id)}">&lt;Empty&gt;</a></li>
+    #{/if}
+    #{else}
+        <li>${slip}</li>
+    #{/else}
 #{/list}
+
 

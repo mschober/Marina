@@ -22,7 +22,7 @@ public class Slip extends Model {
 	
 	@Override
 	public String toString(){
-		Serializable formatBoat = (boat == null)? "<Empty>" : boat;
+		Serializable formatBoat = (boat == null)? "" : boat;
 		return "[" + name + "]: " + formatBoat;
 	}
 

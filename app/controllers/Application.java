@@ -16,4 +16,6 @@ public class Application extends Controller {
         render(slips);
     }
 
+    public static void newMoorage(int id) {
+    }
 }
