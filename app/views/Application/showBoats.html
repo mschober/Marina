@@ -1,7 +1,7 @@
 #{extends 'main.html' /}
 #{set title:'Fill Slip' /}
 
-Slip: ${slip}
+<h3>Slip: ${slip.toFullString()}</h3>
 Boats:
 #{list items:boats, as:'boat'}
     <li><a id="boat" href="@{Application.fillSlip(slip.id, boat.id)}">${boat}</a></li>
