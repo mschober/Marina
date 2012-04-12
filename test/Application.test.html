@@ -20,6 +20,10 @@
     
     clickAndWait('empty')
     assertTitle('Fill Slip')
+    assertTextPresent('Length')
+    assertTextPresent('20')
+    assertTextPresent('Beam')
+    assertTextPresent('10')
     
     clickAndWait('boat')
     assertTitle('Marina')
