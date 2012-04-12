@@ -7,15 +7,33 @@ Boat(b1):
 Boat(b2):
     name: Power Boat
 
+Size(s1):
+    length: 10
+    beam: 20
+    
+Size(s2):
+    length: 25
+    beam: 20
+    
+Size(s3):
+    length: 35
+    beam: 15
+    
+Size(l2):
+    size: 25
+    
+
 Slip(s1):
     name: A1
+    size: s1
     boat: 
 
 Slip(s2):
     name: A2
+    size: s2
     boat: b1
     
 Slip(s3):
     name: A3
+    size: s3
     boat: b2
-
