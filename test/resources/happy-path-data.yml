@@ -9,12 +9,18 @@ Boat(b2):
 
 Slip(s1):
     name: A1
+    length: 20
+    beam: 10
     boat: 
 
 Slip(s2):
     name: A2
+    length: 25
+    beam: 20
     boat: b1
     
 Slip(s3):
     name: A3
+    length: 45
+    beam: 15
     boat: b2
