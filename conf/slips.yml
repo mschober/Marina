@@ -1,11 +1,6 @@
 # you describe your data using the YAML notation here
 # and then load them using Fixtures.load("data.yml")
 
-Boat(b1):
-    name: Sail Boat
-    
-Boat(b2):
-    name: Power Boat
 
 Size(s1):
     length: 10
@@ -19,9 +14,13 @@ Size(s3):
     length: 35
     beam: 15
     
-Size(l2):
-    size: 25
+Boat(b1):
+    name: Sail Boat
+    size: s1
     
+Boat(b2):
+    name: Power Boat
+    size: s2
 
 Slip(s1):
     name: A1

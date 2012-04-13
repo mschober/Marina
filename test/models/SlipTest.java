@@ -1,37 +1,44 @@
 package models;
 
 import static org.junit.Assert.*;
+import static utils.MarinaFactory.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import play.test.UnitTest;
 import utils.MarinaFactory;
+import utils.MarinaHelper;
 
 public class SlipTest extends UnitTest {
 
-	private Slip slip;
+	private Slip emptySlip;
+	private Slip filledSlip;
 
 	@Before
 	public void setUp() throws Exception {
-		slip = new Slip("A50", null);
+		emptySlip = new Slip("A50", null);
+		filledSlip = new Slip("A51", boat());
 	}
 
 	@Test
-	public void printSlip() {
-		assertEquals("[A50]: ", slip.toString());
-		Slip slip2 = new Slip("A51", MarinaFactory.boat());
-		assertEquals("[A51]: " + MarinaFactory.BOAT_NAME, slip2.toString());
-		
-		
-		assertEquals("[A50]: " + "\nLength: 0, Beam: 0", slip.toFullString());
-		assertEquals("[A51]: " + MarinaFactory.BOAT_NAME.concat("\nLength: 0, Beam: 0"), slip2.toFullString());
-		
-		slip.setLength(10).setBeam(20);
-		slip2.setBeam(52).setLength(35);
-		assertEquals("[A50]: " + "\nLength: 10, Beam: 20", slip.toFullString());
-		assertEquals("[A51]: " + MarinaFactory.BOAT_NAME.concat("\nLength: 35, Beam: 52"), slip2.toFullString());
-		
+	public void regularToString() {
+		assertEquals(Slip.formatName("A50"), emptySlip.toString());
+		assertEquals(Slip.formatName("A51") + boat(), filledSlip.toString());
+	}
+
+	@Test
+	public void fullToString() {
+		assertEquals(Slip.formatName(emptySlip.name, emptySlip.size), emptySlip.toFullString());
+		assertEquals(Slip.formatName(filledSlip.name, filledSlip.size) + boat(), filledSlip.toFullString());
+	}
+	
+	@Test
+	public void fullToStringWithSets() {
+		emptySlip.setLength(10).setBeam(20);
+		filledSlip.setBeam(52).setLength(35);
+		assertEquals(Slip.formatName(emptySlip.name, emptySlip.size), emptySlip.toFullString());
+		assertEquals(Slip.formatName(filledSlip.name, filledSlip.size) + filledSlip.boat, filledSlip.toFullString());
 	}
 
 }

@@ -29,11 +29,11 @@ public class Size extends Model {
 	
 	@Override
 	public String toString(){
-		return stringatize("Length: ", length).concat(", ").concat(stringatize("Beam: ", beam));
+		return format(this);
 	}
 
-	private String stringatize(String stringPrefix, Integer value) {
-		return stringPrefix.concat(value.toString());
+	public static String format(Size size) {
+		return " -> (Length: " + size.length + ", " + "Beam: " + size.beam + ")"; 
 	}
 	
 }

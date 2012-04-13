@@ -6,25 +6,27 @@ import org.junit.Before;
 import org.junit.Test;
 
 import play.test.UnitTest;
+import utils.MarinaFactory;
 
 public class SizeTest extends UnitTest {
 
+	private static final String SEPARATOR = ", ";
 	private Size size;
 
 	@Before
 	public void setUp() throws Exception {
-		size = new Size(20, 35);
+		size = MarinaFactory.size(); 
 	}
 
 	@Test
 	public void printSize() {
-		assertEquals("Length: 20".concat(", ").concat("Beam: 35"), size.toString());
+		assertEquals(Size.format(size), size.toString());
 		
 		size.setBeam(45).setLength(1);
-		assertEquals("Length: 1".concat(", ").concat("Beam: 45"), size.toString());
+		assertEquals(Size.format(MarinaFactory.size(1, 45)), size.toString());
 		
 		size.setLength(12).setBeam(32);
-		assertEquals("Length: 12".concat(", ").concat("Beam: 32"), size.toString());
+		assertEquals(Size.format(MarinaFactory.size(12, 32)), size.toString());
 
 	}
 

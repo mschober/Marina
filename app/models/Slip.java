@@ -7,9 +7,13 @@ import javax.persistence.OneToOne;
 
 
 import play.db.jpa.Model;
+import utils.MarinaFactory;
+import utils.MarinaHelper;
 
 @Entity
 public class Slip extends Model {
+
+	public static final String SLIP_SIZE = "Slip Size: ";
 
 	public String name;
 	
@@ -22,17 +26,16 @@ public class Slip extends Model {
 	public Slip(String name, Boat boat) {
 		this.name = name;
 		this.boat = boat;
-		this.size = new Size(0, 0);
+		this.size = MarinaFactory.size();
 	}
 	
 	@Override
 	public String toString(){
-		Serializable formatBoat = (boat == null)? "" : boat;
-		return "[" + name + "]: " + formatBoat;
+		return formatName(name).concat(formatBoat(boat));
 	}
 
 	public String toFullString() {
-		return toString().concat("\n").concat(size.toString());
+		return formatName(name, size) + formatBoat(boat);
 	}
 
 	public Slip setLength(int length) {
@@ -43,6 +46,18 @@ public class Slip extends Model {
 	public Slip setBeam(int beam) {
 		this.size.setBeam(beam).save();
 		return this;
+	}
+
+	public static String formatName(String name, Size size) {
+		return formatName(name.concat(size.toString()));
+	}
+
+	public static String formatName(String string) {
+		return "[".concat(string).concat("]: ");
+	}
+	
+	private static String formatBoat(Boat b) {
+		return (b == null)? "" : b.toString();
 	}
 
 }
