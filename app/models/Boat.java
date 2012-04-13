@@ -25,7 +25,7 @@ public class Boat extends Model {
 	
 	@Override
 	public String toString(){
-		return name.concat(formatSize(size));
+		return name;
 	}
 
 	private String formatSize(Size size2) {
@@ -34,6 +34,10 @@ public class Boat extends Model {
 
 	public void setSize(Size size) {
 		this.size = size;
+	}
+
+	public String toFullString() {
+		return name.concat(formatSize(size));
 	}
 
 }

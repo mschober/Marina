@@ -18,8 +18,13 @@ public class BoatTest extends UnitTest {
 	}
 
 	@Test
-	public void printBoat() {
-		assertEquals(MarinaFactory.BOAT_NAME.concat(MarinaFactory.size().toString()), boat.toString());
+	public void simpleToString(){
+		assertEquals(MarinaFactory.BOAT_NAME, boat.toString());
+	}
+	
+	@Test
+	public void toFullString() {
+		assertEquals(MarinaFactory.BOAT_NAME.concat(MarinaFactory.size().toString()), boat.toFullString());
 	}
 	
 	@Test
