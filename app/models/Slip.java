@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
 import play.db.jpa.Model;
-import utils.MarinaFactory;
 
 @Entity
 public class Slip extends Model {

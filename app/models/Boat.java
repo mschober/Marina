@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
 import play.db.jpa.Model;
-import utils.MarinaFactory;
 
 @Entity
 public class Boat extends Model {
@@ -15,7 +14,7 @@ public class Boat extends Model {
 	public Size size;
 
 	public Boat(String name){
-		this(name, MarinaFactory.size());
+		this(name, new Size(0,0));
 	}
 	
 	public Boat(String name, Size size){

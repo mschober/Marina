@@ -5,6 +5,9 @@
 # Home page
 GET     /                                                 Application.index
 
+# Admin page
+GET     /admin                                            module:crud    
+
 # Fill Slip page
 GET     /slips/{id}                                       Application.fillSlip
 
