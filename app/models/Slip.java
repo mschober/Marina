@@ -5,10 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
-
 import play.db.jpa.Model;
 import utils.MarinaFactory;
-import utils.MarinaHelper;
 
 @Entity
 public class Slip extends Model {
@@ -23,10 +21,10 @@ public class Slip extends Model {
 	@OneToOne
 	public Size size;
 
-	public Slip(String name, Boat boat) {
+	public Slip(String name, Size size, Boat boat) {
 		this.name = name;
+		this.size = size;
 		this.boat = boat;
-		this.size = MarinaFactory.size();
 	}
 	
 	@Override

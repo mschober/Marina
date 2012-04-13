@@ -17,8 +17,8 @@ public class SlipTest extends UnitTest {
 
 	@Before
 	public void setUp() throws Exception {
-		emptySlip = new Slip("A50", null);
-		filledSlip = new Slip("A51", boat());
+		emptySlip = new Slip("A50", MarinaFactory.size(), null);
+		filledSlip = new Slip("A51", MarinaFactory.size(), boat());
 	}
 
 	@Test

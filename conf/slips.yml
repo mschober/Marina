@@ -2,37 +2,37 @@
 # and then load them using Fixtures.load("data.yml")
 
 
-Size(s1):
+Size(size1):
     length: 10
     beam: 20
     
-Size(s2):
+Size(size2):
     length: 25
     beam: 20
     
-Size(s3):
+Size(size3):
     length: 35
     beam: 15
     
 Boat(b1):
     name: Sail Boat
-    size: s1
+    size: size1
     
 Boat(b2):
     name: Power Boat
-    size: s2
+    size: size2
 
-Slip(s1):
+Slip(slip1):
     name: A1
-    size: s1
+    size: size1
     boat: 
 
-Slip(s2):
+Slip(slip2):
     name: A2
-    size: s2
+    size: size2
     boat: b1
     
-Slip(s3):
+Slip(slip3):
     name: A3
-    size: s3
+    size: size3
     boat: b2

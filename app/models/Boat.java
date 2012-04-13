@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 import play.db.jpa.Model;
 import utils.MarinaFactory;
@@ -9,11 +10,17 @@ import utils.MarinaFactory;
 public class Boat extends Model {
 	
 	public String name;
+	
+	@OneToOne
 	public Size size;
 
 	public Boat(String name){
+		this(name, MarinaFactory.size());
+	}
+	
+	public Boat(String name, Size size){
 		this.name = name;
-		this.size = MarinaFactory.size();
+		this.size = size;
 	}
 	
 	@Override
