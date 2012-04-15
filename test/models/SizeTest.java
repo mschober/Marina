@@ -10,7 +10,6 @@ import utils.MarinaFactory;
 
 public class SizeTest extends UnitTest {
 
-	private static final String SEPARATOR = ", ";
 	private Size size;
 
 	@Before

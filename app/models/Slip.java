@@ -7,6 +7,7 @@ import javax.persistence.OneToOne;
 
 import play.data.validation.Required;
 import play.db.jpa.Model;
+import utils.MarinaFactory;
 
 @Entity
 public class Slip extends Model {
@@ -28,6 +29,11 @@ public class Slip extends Model {
 		this.boat = boat;
 	}
 	
+	public Slip() {
+		this.name = "New Slip";
+		this.size = MarinaFactory.size();
+	}
+
 	@Override
 	public String toString(){
 		return formatName(name).concat(formatBoat(boat));
