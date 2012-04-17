@@ -18,6 +18,7 @@ public class Boat extends Model {
 	}
 	
 	public Boat(String name, Size size){
+		size.save();
 		this.name = name;
 		this.size = size;
 	}

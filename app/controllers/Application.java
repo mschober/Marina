@@ -15,19 +15,29 @@ public class Application extends Controller {
     	List<Slip> slips = Slip.findAll();
         render(slips);
     }
-
+    
     public static void showBoats(Long id) {
-    	Slip slip = Slip.findById(id);
-    	List<Boat> boats = Boat.findAll();
-    	render(slip, boats);
+    	       Slip slip = Slip.findById(id);
+    	       List<Boat> boats = Boat.findAll();
+    	       render(slip, boats);
+    }
+    
+    public static void post(Long slipId, String boatName){
+    	Boat createdBoat = new Boat(boatName);
+    	createdBoat.save();
+		fillSlip(slipId, createdBoat);
+    	index();
     }
     
     public static void fillSlip(Long slipId, Long boatId) {
-    	Slip slip = Slip.findById(slipId);
-    	Boat boat = Boat.findById(boatId);
-    	slip.boat = boat;
-    	slip.save();
-//    	slip.fill(boat);
+    	Boat foundBoat = Boat.findById(boatId);
+    	fillSlip(slipId, foundBoat);
     	index();
     }
+
+	private static void fillSlip(Long slipId, Boat foundBoat) {
+		Slip slip = Slip.findById(slipId);
+		slip.boat = foundBoat;
+    	slip.save();
+	}
 }

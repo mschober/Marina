@@ -1,14 +1,15 @@
 #{extends 'main.html' /}
 #{set title:'Marina' /}
 
+
 Slips:
 #{list items:slips, as:'slip'}
     #{if slip.boat == null}
-        <li>${slip}<a id="empty" href="@{Application.showBoats(slip.id)}">&lt;Empty&gt;</a></li>
+        <li>${slip}<!--<a id="empty" href="@{Application.showBoats(slip.id)}">&lt;Empty&gt;</a></li>-->
+        #{addField slip:slip/}
     #{/if}
     #{else}
         <li>${slip}</li>
     #{/else}
 #{/list}
-
 
