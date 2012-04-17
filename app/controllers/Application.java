@@ -17,9 +17,16 @@ public class Application extends Controller {
     }
     
     public static void showBoats(Long id) {
-    	       Slip slip = Slip.findById(id);
-    	       List<Boat> boats = Boat.findAll();
-    	       render(slip, boats);
+       Slip slip = Slip.findById(id);
+       List<Boat> boats = Boat.findAll();
+       render(slip, boats);
+    }
+    
+    public static void delete(Long slipId) {
+    	Slip slip = Slip.findById(slipId);
+    	slip.boat = null;
+    	slip.save();
+    	index();
     }
     
     public static void post(Long slipId, String boatName){

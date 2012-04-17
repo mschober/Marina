@@ -9,7 +9,7 @@ Slips:
         #{addField slip:slip/}
     #{/if}
     #{else}
-        <li>${slip}</li>
+        <li>${slip} #{form @Application.delete(slip.id)}<input type="submit" value="X"/>#{/form}<li>
     #{/else}
 #{/list}
 
