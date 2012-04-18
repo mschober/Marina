@@ -4,12 +4,13 @@
 
 Slips:
 #{list items:slips, as:'slip'}
-    #{if slip.boat == null}
-        <li>${slip}<!--<a id="empty" href="@{Application.showBoats(slip.id)}">&lt;Empty&gt;</a></li>-->
-        #{addField slip:slip/}
-    #{/if}
-    #{else}
-        <li>${slip} #{form @Application.delete(slip.id)}<input type="submit" value="X"/>#{/form}<li>
-    #{/else}
+    <li>
+        #{if slip.boat == null}
+            #{addPostFieldUsing object: slip, fieldName: 'boatName' /}
+        #{/if}
+        #{else}
+            #{addDeleteButtonUsing object: slip, deleteText: 'empty slip' /}
+        #{/else}
+    </li>
 #{/list}
 
