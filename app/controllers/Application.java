@@ -32,7 +32,7 @@ public class Application extends Controller {
     public static void post(Long slipId, String boatName){
     	Boat createdBoat = new Boat(boatName);
     	createdBoat.save();
-		fillSlip(slipId, createdBoat);
+		fillSlip(slipId, createdBoat.id);
     	index();
     }
     
