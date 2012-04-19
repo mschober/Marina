@@ -3,14 +3,7 @@
 
 
 <h1>Slips:</h1>
-#{list items:slips, as:'slip'}
-   <div class="row"> 
-        #{if slip.boat == null}
-            #{addPostFieldUsing object: slip, fieldName: 'boatName' /}
-        #{/if}
-        #{else}
-            #{addDeleteButtonUsing object: slip, deleteText: 'Remove Boat' /}
-        #{/else}
-   </div> 
-#{/list}
+#{printDock dock: aDock, forOffset: 0 /}
+#{printDock dock: bDock, forOffset: 4 /}
+#{printDock dock: cDock, forOffset: 8 /}
 

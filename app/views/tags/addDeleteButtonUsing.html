@@ -1,5 +1,5 @@
-#{form @Application.delete(_object.id)}
-    #{print object: _object /}
+#{form @Application.delete(_slip.id)}
+    #{print slip: _slip, offset: _offset/}
         <div class="span2">
             <input type="submit" value="${_deleteText}"/>
         </div>

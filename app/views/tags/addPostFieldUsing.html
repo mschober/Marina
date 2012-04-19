@@ -1,5 +1,5 @@
-#{form @Application.post(_object.id, value)}
-    #{print object: _object /}
+#{form @Application.post(_slip.id, value)}
+    #{print slip: _slip, offset: _offset /}
         <div class="span2">
             #{addField name: "${_fieldName}", placeholder: '<EMPTY>'/}
         </div>

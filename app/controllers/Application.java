@@ -12,8 +12,10 @@ import models.*;
 public class Application extends Controller {
 
     public static void index() {
-    	List<Slip> slips = Slip.findAll();
-        render(slips);
+    	Dock aDock = Dock.find("byName", "A Dock").first();
+    	Dock bDock = Dock.find("byName", "B Dock").first();
+    	Dock cDock = Dock.find("byName", "C Dock").first();
+        render(aDock, bDock, cDock);
     }
     
     public static void showBoats(Long id) {

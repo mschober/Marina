@@ -13,6 +13,9 @@ public class Bootstrap extends Job {
         if(Slip.count() == 0) {
             Fixtures.loadModels("slips.yml");
         }
+        if(Dock.count() == 0) {
+        	Fixtures.loadModels("docks.yml");
+        }
     }
  
 }

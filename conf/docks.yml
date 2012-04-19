@@ -1,0 +1,60 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+Slip(A1):
+    name: "A1"
+Slip(A2):
+    name: "A2"
+Slip(A3):    
+    name: "A3"
+Slip(A4):    
+    name: "A4"
+Slip(A5):    
+    name: "A5"
+             
+Slip(B1):    
+    name: "B1"
+Slip(B2):    
+    name: "B2"
+Slip(B3):    
+    name: "B3"
+Slip(B4):    
+    name: "B4"
+Slip(B5):    
+    name: "B5"
+             
+Slip(C1):    
+    name: "C1"
+Slip(C2):    
+    name: "C2"
+Slip(C3):    
+    name: "C3"
+Slip(C4):    
+    name: "C4"
+Slip(C5):    
+    name: "C5"
+
+Dock(aDock):
+    name: "A Dock"
+    slips: 
+        - A1
+        - A2
+        - A3
+        - A4
+        - A5
+Dock(bDock):
+    name: "B Dock"
+    slips: 
+        - B1
+        - B2
+        - B3
+        - B4
+        - B5
+Dock(cDock):
+    name: "C Dock"
+    slips: 
+        - C1
+        - C2
+        - C3
+        - C4
+        - C5
