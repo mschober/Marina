@@ -1,7 +1,5 @@
 package models;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
@@ -11,6 +9,8 @@ import utils.MarinaFactory;
 
 @Entity
 public class Slip extends Model {
+
+	static final String NEW_SLIP = "New Slip";
 
 	public static final String SLIP_SIZE = "Slip Size: ";
 
@@ -24,45 +24,34 @@ public class Slip extends Model {
 	public Size size;
 
 	public Slip(String name, Size size, Boat boat) {
-		this.name = name;
-		this.size = size;
+		this(name, size);
 		this.boat = boat;
 	}
-	
+
 	public Slip() {
-		this.name = "New Slip";
-		this.size = MarinaFactory.size();
+		this(NEW_SLIP, null, null);
+	}
+
+	public Slip(String name, Size size) {
+		this.name = name;
+		this.size = size;
+	}
+
+	public Slip(String name) {
+		this(name, null, null);
 	}
 
 	@Override
 	public String toString(){
-		return formatName(name).concat(formatBoat(boat));
+		return name.concat(formatBoat(boat));
 	}
 
 	public String toFullString() {
-		return formatName(name, size) + formatBoat(boat);
+//		return PrintFormatter.format(new Slip(name, size)) + formatBoat(boat);
+		return "";
 	}
 
-	public Slip setLength(int length) {
-		this.size.setLength(length).save();
-		return this;
-	}
-
-	public Slip setBeam(int beam) {
-		this.size.setBeam(beam).save();
-		return this;
-	}
-
-	public static String formatName(String name, Size size) {
-		return formatName(name.concat(size.toString()));
-	}
-
-	public static String formatName(String string) {
-		return "[".concat(string).concat("]: ");
-	}
-	
 	private static String formatBoat(Boat b) {
 		return (b == null)? "" : b.toString();
 	}
-
 }

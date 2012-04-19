@@ -17,13 +17,17 @@ public class Size extends Model {
 		this.beam = beam;
 	}
 
-	public Size setLength(int length2) {
-		this.length = length2;
+	public Size() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Size setLength(int length) {
+		this.length = length;
 		return this;
 	}
 
-	public Size setBeam(int beam2) {
-		this.beam = beam2;
+	public Size setBeam(int beam) {
+		this.beam = beam;
 		return this;
 	}
 	

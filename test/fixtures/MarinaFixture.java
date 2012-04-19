@@ -16,7 +16,7 @@ import common.MarinaTest;
 public abstract class MarinaFixture extends MarinaTest implements DataTest {
 	
 	public enum DataFile {
-		HAPPY_PATH_DATA(), BOAT_DATA;
+		HAPPY_PATH_DATA(), BOAT_DATA(), DOCKS();
 		
 		String yml;
 
@@ -52,7 +52,7 @@ public abstract class MarinaFixture extends MarinaTest implements DataTest {
 			load(df);
 	}
 	
-	private void load(DataFile happyPathData) {
-		Fixtures.loadModels(PATH_TO_RESOURCES + happyPathData.yml);
+	private void load(DataFile dataFile) {
+		Fixtures.loadModels(PATH_TO_RESOURCES + dataFile.yml);
 	}
 }
