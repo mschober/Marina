@@ -2,15 +2,15 @@
 #{set title:'Marina' /}
 
 
-Slips:
+<h1>Slips:</h1>
 #{list items:slips, as:'slip'}
-    <li>
+   <div class="row"> 
         #{if slip.boat == null}
             #{addPostFieldUsing object: slip, fieldName: 'boatName' /}
         #{/if}
         #{else}
             #{addDeleteButtonUsing object: slip, deleteText: 'Remove Boat' /}
         #{/else}
-    </li>
+   </div> 
 #{/list}
 

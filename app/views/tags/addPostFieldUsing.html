@@ -1,3 +1,6 @@
 #{form @Application.post(_object.id, value)}
-        ${_object} #{addField name: "${_fieldName}", placeholder: '<EMPTY>'/}
+    #{print object: _object /}
+        <div class="span9">
+            #{addField name: "${_fieldName}", placeholder: '<EMPTY>'/}
+        </div>
 #{/form}
