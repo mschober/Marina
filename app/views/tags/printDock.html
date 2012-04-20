@@ -1,10 +1,10 @@
 #{list items:_dock.slips, as:'slip'}
    <div class="row"> 
         #{if slip.boat == null}
-            #{addPostFieldUsing slip: slip, fieldName: 'boatName', offset: _forOffset /}
+            #{addPostFieldUsing slip: slip, fieldName: 'boatName', offset: _offset /}
         #{/if}
         #{else}
-            #{addDeleteButtonUsing slip: slip, deleteText: 'Remove Boat', offset: _forOffset /}
+            #{addDeleteButtonUsing slip: slip, deleteText: 'Remove Boat', offset: _offset /}
         #{/else}
    </div> 
 #{/list}
