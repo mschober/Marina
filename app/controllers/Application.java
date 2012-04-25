@@ -7,6 +7,10 @@ import utils.MarinaHelper;
 
 import java.util.*;
 
+import javax.swing.plaf.ListUI;
+
+import org.apache.commons.collections.ListUtils;
+
 import models.*;
 
 public class Application extends Controller {
@@ -17,6 +21,7 @@ public class Application extends Controller {
 //    	Dock cDock = Dock.find("byName", "C Dock").first();
 //        render(aDock, bDock, cDock);
         List<Slip> slips = Slip.findAll();
+        Arrays.sort(slips.toArray());
         render(slips);
     }
     

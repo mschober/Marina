@@ -8,7 +8,7 @@ import play.db.jpa.Model;
 import utils.MarinaFactory;
 
 @Entity
-public class Slip extends Model {
+public class Slip extends Model implements Comparable<Slip> {
 
 	static final String NEW_SLIP = "New Slip";
 
@@ -53,5 +53,14 @@ public class Slip extends Model {
 
 	private static String formatBoat(Boat b) {
 		return (b == null)? "" : b.toString();
+	}
+
+	@Override
+	public int compareTo(Slip o) {
+		Slip that = null;
+		if(o instanceof Slip)
+			that = (Slip)o;
+		
+		return this.name.compareTo(that.name);
 	}
 }
