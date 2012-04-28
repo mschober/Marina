@@ -25,12 +25,6 @@ public class Application extends Controller {
         render(slips);
     }
     
-    public static void showBoats(Long id) {
-       Slip slip = Slip.findById(id);
-       List<Boat> boats = Boat.findAll();
-       render(slip, boats);
-    }
-    
     public static void delete(Long slipId) {
     	Slip slip = Slip.findById(slipId);
     	slip.boat = null;
