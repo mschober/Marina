@@ -12,7 +12,7 @@ import play.test.UnitTest;
 public abstract class MarinaFixture extends MarinaTest implements DataTest {
 	
 	public enum DataFile {
-		HAPPY_PATH_DATA();
+		HAPPY_PATH_DATA(), BOAT_DATA(), DOCKS();;
 		
 		String yml;
 

@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import play.db.jpa.GenericModel.JPAQuery;
 
-import fixtures.MarinaFixture;
+//import fixtures.MarinaFixture;
 
 public class DockFixture extends MarinaFixture {
 	
