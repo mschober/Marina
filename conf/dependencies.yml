@@ -3,3 +3,5 @@
 require:
     - play
     - play -> crud
+    - play -> webdrive 0.2:
+        transitive: false

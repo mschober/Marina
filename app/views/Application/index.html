@@ -6,7 +6,7 @@
 #{list items:slips, as:'slip'}
    <div class="row"> 
         #{if slip.boat == null}
-            #{addPostFieldUsing slip: slip, fieldName: 'boatName', offset: _offset /}
+            #{addPostFieldUsing slip: slip, fieldId: slip.name, offset: _offset /}
         #{/if}
         #{else}
             #{addDeleteButtonUsing slip: slip, deleteText: 'Remove Boat', offset: _offset /}

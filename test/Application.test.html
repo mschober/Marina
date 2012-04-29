@@ -3,6 +3,7 @@
 #{fixture delete:'all', load:models.fixtures.MarinaFixture.PATH_TO_LOAD_DATA_YML /}
 
 
+
 #{selenium}
     // Open the home page, and check that no error occured
     open('/')
@@ -18,7 +19,9 @@
     assertTextPresent('A3')    
     assertTextPresent('Power Boat')
     
-#    clickAndWait('empty')
+    type('A1', 'hi')
+#	type('A1', Keys.ENTER.toString()); import org.openqa.selenium.Keys;
+    
 #    assertTitle('Fill Slip')
 #    assertTextPresent('Length')
 #    assertTextPresent('20')
