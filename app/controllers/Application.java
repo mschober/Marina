@@ -17,9 +17,6 @@ public class Application extends Controller {
 
     public static void index() {
         List<Slip> slips = Slip.findAll();
-        Slip[] array = (Slip[]) slips.toArray();
-		Arrays.sort(array);
-		slips = Arrays.asList(array);
         render(slips);
     }
     
