@@ -19,4 +19,8 @@ public class Dock extends Model {
 		this.slips = slips;
 	}
 
+	public int slipCount() {
+		return slips.size();
+	}
+
 }
