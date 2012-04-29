@@ -26,14 +26,15 @@ public class DockTest extends UnitTest {
 	
 	@Test
 	public void printedDefinition(){
-		assertEquals("Dock[]", aDock.toString());
+		assertEquals("Unnamed\n[New Slip]", aDock.toString());
 	}
 
 	@Test
 	public void withSlips(){
-		Slip[] slips = new Slip[]{new Slip(), new Slip()};
-		aDock = createADock(slips);
+		aDock = createADock(new Slip("A1"), new Slip("A2"));
 		assertEquals(2, aDock.slipCount());
+
+		assertEquals("A Dock\n[A1, A2]", aDock.toString());
 	}
 
 	private Dock createADock(Slip... slips) {
