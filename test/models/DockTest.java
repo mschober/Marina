@@ -33,7 +33,13 @@ public class DockTest extends UnitTest {
 	public void withSlips(){
 		aDock = createADock(new Slip("A1"), new Slip("A2"));
 		assertEquals(2, aDock.slipCount());
-
+		assertEquals("A Dock\n[A1, A2]", aDock.toString());
+	}
+	
+	@Test
+	public void sorted(){
+		aDock = createADock(new Slip("A2"), new Slip("A1"));
+		assertEquals(2, aDock.slipCount());
 		assertEquals("A Dock\n[A1, A2]", aDock.toString());
 	}
 

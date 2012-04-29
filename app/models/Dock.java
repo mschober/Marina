@@ -1,6 +1,8 @@
 package models;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -21,7 +23,7 @@ public class Dock extends Model {
 	}
 
 	public void setSlips(List<Slip> slips2) {
-		this.slips = (slips2 != null)? slips2: Arrays.asList(new Slip[]{new Slip()});
+		this.slips = (slips2 != null)? sortSlips(slips2): Arrays.asList(new Slip[]{new Slip()});
 	}
 
 	public void setName(String name2) {
@@ -35,6 +37,11 @@ public class Dock extends Model {
 	@Override
 	public String toString(){
 		return name + "\n" + slips.toString();
+	}
+
+	private List<Slip> sortSlips(List<Slip> slips) {
+		Collections.sort(slips);
+		return slips;
 	}
 
 }

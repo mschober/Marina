@@ -17,6 +17,7 @@ public class Application extends Controller {
 
     public static void index() {
         List<Slip> slips = Slip.findAll();
+        Collections.sort(slips);
         render(slips);
     }
     
